@@ -1,0 +1,50 @@
+<p>View Tweet</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @tweet %>
+
+<div class="container text-center">
+  <div class="row row-cols-auto">
+
+      <div class="col">
+          <%= link_to image_tag('backc.svg'), tweets_path  , title: "Back page"%>
+      </div>
+
+      <div class="col">
+          <%= link_to image_tag('editc.svg'), edit_tweet_path(@tweet) , title: "Edit tweet" %> 
+      </div>
+
+      <div class="col">
+          
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <%= image_tag('deletec.svg') %>
+          </button>
+      </div>
+  </div>
+
+</div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Seguro que deseas Eliminar el Tweet</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= @tweet.username%>
+       <br> <%= @tweet.description%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        
+        <%= button_to image_tag('deletec.svg'), @tweet, method: :delete  , title: "DELETE tweet"%>
+      </div>
+    </div>
+  </div>
+</div>
