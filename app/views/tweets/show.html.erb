@@ -1,22 +1,23 @@
-<p>View Tweet</p>
+<h1>View Tweet</h1>
 <p style="color: green"><%= notice %></p>
+<div class="card text-bg-primary"> 
+    <%= render @tweet %>
+</div>
 
-<%= render @tweet %>
 
 <div class="container text-center">
   <div class="row row-cols-auto">
 
       <div class="col">
-          <%= link_to image_tag('backc.svg'), tweets_path  , title: "Back page"%>
+          <%= link_to image_tag('backc.svg'), tweets_path  ,class: "btn btn-light" , title: "Back page"%>
       </div>
 
       <div class="col">
-          <%= link_to image_tag('editc.svg'), edit_tweet_path(@tweet) , title: "Edit tweet" %> 
+          <%= link_to image_tag('editc.svg'), edit_tweet_path(@tweet) ,class: "btn btn-light"  , title: "Edit tweet" %> 
       </div>
 
       <div class="col">
-          
-          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <%= image_tag('deletec.svg') %>
           </button>
       </div>
@@ -43,7 +44,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         
-        <%= button_to image_tag('deletec.svg'), @tweet, method: :delete  , title: "DELETE tweet"%>
+        <%= button_to image_tag('deletec.svg'), @tweet, method: :delete ,class: "btn btn-danger"   , title: "DELETE tweet"%>
       </div>
     </div>
   </div>
