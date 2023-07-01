@@ -6,8 +6,8 @@
             <div class="row  row-cols-auto">
               <div class="col">
                 <%= form_with url: tweets_path, method: :get do |form| %>
-                  <%= image_tag('searchc.svg')%>
-                  <%= form.text_field :query_text, placeholder: "Busqueda", value: params[:query_text] %>
+                  <%= image_tag('searchc.svg', title: "Search Tweet" )%>
+                  <%= form.text_field :query_text, placeholder: "Busqueda", title: "Seach Tweet", value: params[:query_text] %>
                   
                 <% end %>
               </div>
@@ -21,10 +21,10 @@
 
           <thead>
             <tr>
-              <th scope="col">id</th>
-              <th scope="col">user </th>
-              <th scope="col">tweet</th>
-              <th scope="col">accion</th>
+              <th scope="col" style="width: 50px;" >Id</th>
+              <th scope="col" style="width: 250px;">User </th>
+              <th scope="col"style="width: 600px;">Tweet</th>
+              <th scope="col"style="width: 50px;">Accion</th>
             </tr>
           </thead>
 

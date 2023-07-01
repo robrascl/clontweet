@@ -33,15 +33,16 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header text-bg-primary">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Seguro que deseas Eliminar el Tweet</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= @tweet.username%>
-       <br> <%= @tweet.description%>
+       User : <%= @tweet.username%>
+       <br> <br>
+       Tweet : <%= @tweet.description%>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer text-bg-light">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         
         <%= button_to image_tag('deletec.svg'), @tweet, method: :delete ,class: "btn btn-danger"   , title: "DELETE tweet"%>
